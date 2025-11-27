@@ -40,6 +40,7 @@ def crear_datos_juego() -> dict:
         "indice": 0,
         "volumen_musica": 100,
         "bandera_texto": False,
+        "tiempo_inicio": None,
     }
     return datos_juego
 
@@ -56,17 +57,7 @@ def obtener_pregunta_actual(datos_juego:dict,lista_preguntas:list) -> dict | Non
         
     return None  
 
-def corriendo_tiempo(datos_juego: dict, tiempo_inicio: float, tiempo_actual: float) -> dict:
-        tiempo_transcurrido_s = (tiempo_actual - tiempo_inicio) / 1000.0
-        tiempo_restante = TIEMPO_PARTIDA - tiempo_transcurrido_s
 
-        if tiempo_restante <= 0:
-            datos_juego["tiempo_restante"] = 0
-            datos_juego["game_over"] = True
-        else:
-            datos_juego["tiempo_restante"] = tiempo_restante
-
-        return datos_juego
 
 # ============================================================
 #  PUNTOS - VIDAS - RESPUESTAS
@@ -142,21 +133,36 @@ def reiniciar_estadisticas(datos_juego: dict) -> bool:
             "tiempo_total": TIEMPO_PARTIDA,
             "puntuacion": 0,
             "cantidad_vidas": CANTIDAD_VIDAS,
+            "tiempo_restante": TIEMPO_PARTIDA,
+            "tiempo_inicio": None,
         })
     else:
         retorno = False
     
     return retorno
 
-def actualizar_tiempo(tiempo_inicio: float, tiempo_actual: float, datos_juego: dict) -> bool:
-    if type(datos_juego) == dict:
-        retorno = True
-        tiempo_transcurrido = int(tiempo_actual - tiempo_inicio)
-        datos_juego["tiempo_restante"] = TIEMPO_PARTIDA - tiempo_transcurrido
-    else:
-        retorno = False
+
+def corriendo_tiempo(datos_juego: dict, tiempo_inicio: float, tiempo_actual: float) -> dict:
+        tiempo_transcurrido_s = (tiempo_actual - tiempo_inicio) / 1000.0
+        tiempo_restante = TIEMPO_PARTIDA - tiempo_transcurrido_s
+
+        if tiempo_restante <= 0:
+            datos_juego["tiempo_restante"] = 0
+            datos_juego["game_over"] = True
+        else:
+            datos_juego["tiempo_restante"] = int(tiempo_restante)
+
+        return datos_juego
+
+# def actualizar_tiempo(tiempo_inicio: float, tiempo_actual: float, datos_juego: dict) -> bool:
+#     if type(datos_juego) == dict:
+#         retorno = True
+#         tiempo_transcurrido = int(tiempo_actual - tiempo_inicio)
+#         datos_juego["tiempo_restante"] = TIEMPO_PARTIDA - tiempo_transcurrido
+#     else:
+#         retorno = False
         
-    return retorno
+#     return retorno
 
 # ============================================================
 #  FUNCIONES PYGAME (GRÁFICAS)

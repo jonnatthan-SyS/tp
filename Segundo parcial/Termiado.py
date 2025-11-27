@@ -7,7 +7,7 @@ pygame.init()
 def mostrar_game_over(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event],datos_juego:dict) -> str:
     datos_juego["bandera_texto"] = not datos_juego["bandera_texto"]
     ventana = "terminado"
-    cuadro_texto = crear_elemento_juego("Segundo parcial/Texturas/Fondo_respuesta.jpg",300,50,150,275)
+    cuadro_texto = crear_elemento_juego("Segundo parcial/Texturas/textura.jpg",300,50,150,275)
     
     for evento in cola_eventos:
         if evento.type == pygame.TEXTINPUT:
@@ -23,7 +23,7 @@ def mostrar_game_over(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Eve
     # if teclado[pygame.K_BACKSPACE]:
     #     datos_juego["nombre"] = datos_juego["nombre"][0:-1]
     
-    pantalla.fill(COLOR_BLANCO)
+    pantalla.fill(COLOR_AZUL_OSCURO)
     mostrar_texto(pantalla,f"PERDISTE EL JUEGO: {datos_juego.get("puntuacion")}",(200,50),FUENTE_ARIAL_50,COLOR_NEGRO)
     
     #Estaria bueno que validen que texto tenga al menos 3 caracteres sino no puede seguir adelante

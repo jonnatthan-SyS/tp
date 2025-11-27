@@ -46,6 +46,7 @@ while ejecutando:
         if bandera_juego == False:
             random.shuffle(lista_preguntas)
             reiniciar_estadisticas(datos_juego)
+            datos_juego["tiempo_inicio"] = pygame.time.get_ticks()
             bandera_juego = True
         ventana_actual = mostrar_juego(pantalla, cola_eventos, datos_juego)
     
