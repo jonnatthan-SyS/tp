@@ -10,18 +10,31 @@ lista_botones = crear_lista_botones("Segundo parcial/Texturas/Fondo_boton.jpeg",
 
 lista_texto_botones = ["JUGAR","AJUSTES","RANKINGS","SALIR "]
 
-def mostrar_menu(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event]) -> str:
+# Menu.py (Línea 15 - CORREGIDO)
+def mostrar_menu(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event], datos_juego:dict) -> tuple[str, dict]:
+#def mostrar_menu(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event], datos_juego: dict) -> str:
     ventana = "menu"
     for evento in cola_eventos:
         if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:
             for i in range(len(lista_botones)):
                 if lista_botones[i]["rectangulo"].collidepoint(evento.pos):
-                    ventana = lista_texto_botones[i].lower()
+                    ventana_siguiente = lista_texto_botones[i].lower()
+                    if ventana_siguiente == "jugar":
+                        # 1. CAPTURA el nuevo estado reiniciado (DICT)
+                        datos_juego = reiniciar_estadisticas(datos_juego) 
+                        
+                        # 2. Ahora que datos_juego es un diccionario, puedes asignarle el tiempo
+                        datos_juego["tiempo_inicio_ticks"] = pygame.time.get_ticks() 
+                    
+                    ventana = ventana_siguiente
         
     pantalla.blit(fondo_menu,(0,0))
+    
     for i in range(len(lista_botones)):
-        mostrar_texto(lista_botones[i]["superficie"],lista_texto_botones[i],(100,20),FUENTE_ARIAL_30,COLOR_BLANCO)
+        mostrar_texto(lista_botones[i]["superficie"],lista_texto_botones[i],(100,20),FUENTE_ARIAL_30,COLOR_GRIS_CLARO)
         pantalla.blit(lista_botones[i]["superficie"],lista_botones[i]["rectangulo"])
-    return ventana
+    
+    return ventana, datos_juego
+
 
 

@@ -31,13 +31,13 @@ def administrar_botones(boton_suma:dict,boton_resta:dict,boton_volver:dict,datos
     return ventana
 
 def dibujar_elementos(pantalla:pygame.Surface,boton_suma:dict,boton_resta:dict,boton_volver:dict,datos_juego:dict) -> None:
-    pantalla.fill(COLOR_BLANCO)
+    pantalla.fill(COLOR_GRIS_CLARO)
     pantalla.blit(boton_suma["superficie"],boton_suma["rectangulo"])
     pantalla.blit(boton_resta["superficie"],boton_resta["rectangulo"])
     pantalla.blit(boton_volver["superficie"],boton_volver["rectangulo"])
     
     mostrar_texto(pantalla,f"{datos_juego.get("volumen_musica",0)} %",(200,200),FUENTE_ARIAL_50,COLOR_NEGRO)
-    mostrar_texto(boton_volver["superficie"],"VOLVER",(5,5),FUENTE_ARIAL_20,COLOR_BLANCO)
+    mostrar_texto(boton_volver["superficie"],"VOLVER",(5,5),FUENTE_ARIAL_20,COLOR_GRIS_CLARO)
 
 def mostrar_ajustes(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event],datos_juego:dict) -> str:
     ventana = "ajustes"

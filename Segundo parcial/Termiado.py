@@ -23,7 +23,7 @@ def mostrar_game_over(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Eve
     # if teclado[pygame.K_BACKSPACE]:
     #     datos_juego["nombre"] = datos_juego["nombre"][0:-1]
     
-    pantalla.fill(COLOR_BLANCO)
+    pantalla.fill(COLOR_GRIS_CLARO)
     mostrar_texto(pantalla,f"PERDISTE EL JUEGO: {datos_juego.get("puntuacion")}",(200,50),FUENTE_ARIAL_50,COLOR_NEGRO)
     
     #Estaria bueno que validen que texto tenga al menos 3 caracteres sino no puede seguir adelante
@@ -31,9 +31,9 @@ def mostrar_game_over(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Eve
     
     if len(datos_juego.get("nombre","")) > 0:
         if datos_juego["bandera_texto"]:
-            mostrar_texto(cuadro_texto["superficie"],f"{datos_juego.get("nombre","")}|",(10,10),FUENTE_ARIAL_30,COLOR_BLANCO)
+            mostrar_texto(cuadro_texto["superficie"],f"{datos_juego.get("nombre","")}|",(10,10),FUENTE_ARIAL_30,COLOR_GRIS_CLARO)
         else:
-            mostrar_texto(cuadro_texto["superficie"],f"{datos_juego.get("nombre","")}",(10,10),FUENTE_ARIAL_30,COLOR_BLANCO)
+            mostrar_texto(cuadro_texto["superficie"],f"{datos_juego.get("nombre","")}",(10,10),FUENTE_ARIAL_30,COLOR_GRIS_CLARO)
     else:
         mostrar_texto(cuadro_texto["superficie"],f"Ingrese su nombre",(10,10),FUENTE_ARIAL_25,"#6F6B6B")
     

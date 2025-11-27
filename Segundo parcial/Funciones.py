@@ -40,6 +40,8 @@ def crear_datos_juego() -> dict:
         "indice": 0,
         "volumen_musica": 100,
         "bandera_texto": False,
+        "tiempo_inicio_ticks":0,
+        "game_over":False,
     }
     return datos_juego
 
@@ -60,36 +62,52 @@ def obtener_pregunta_actual(datos_juego:dict,lista_preguntas:list) -> dict | Non
 #  PUNTOS - VIDAS - RESPUESTAS
 # ============================================================
 
-def modificar_vida(datos_juego: dict, incremento: int) -> bool:
+def modificar_vida(datos_juego: dict, incremento: int) -> dict:
     if type(datos_juego) == dict and datos_juego.get("cantidad_vidas") != None:
-        retorno = True
-        datos_juego["cantidad_vidas"] += incremento
-    else:
-        retorno = False
+        nuevo_estado = datos_juego.copy() # Copia
+        nuevo_estado["cantidad_vidas"] += incremento
         
-    return retorno
+        return nuevo_estado # Retorna la copia modificada
+    
+    return datos_juego
 
-def modificar_puntuacion(datos_juego: dict, incremento: int) -> bool:
+def modificar_puntuacion(datos_juego: dict, incremento: int) -> dict:
     if type(datos_juego) == dict and datos_juego.get("puntuacion") != None:
-        retorno = True
-        datos_juego["puntuacion"] += incremento
-    else:
-        retorno = False
+        nuevo_estado = datos_juego.copy() # Copia
+        nuevo_estado["puntuacion"] += incremento
         
-    return retorno
+        return nuevo_estado # Retorna la copia modificada
+    
+    return datos_juego
 
-def verificar_respuesta(pregunta_actual: dict, datos_juego: dict, respuesta: int) -> bool:
-    if type(pregunta_actual) == dict and pregunta_actual.get("respuesta_correcta") != None:
-        retorno = True
-        if respuesta == pregunta_actual.get("respuesta_correcta"):
-            modificar_puntuacion(datos_juego, 100)
-        else:
-            modificar_puntuacion(datos_juego, -25)
-            modificar_vida(datos_juego, -1)
-    else:
-        retorno = False
+#def verificar_respuesta(pregunta_actual: dict, datos_juego: dict, respuesta: int) -> dict:
+ #   if type(pregunta_actual) == dict and pregunta_actual.get("respuesta_correcta") != None:
+  #      retorno = True
+   #     if respuesta == pregunta_actual.get("respuesta_correcta"):
+    #        modificar_puntuacion(datos_juego, 100)
+     #   else:
+      #      modificar_puntuacion(datos_juego, -25)
+       #     modificar_vida(datos_juego, -1)
+    #else:
+     #   retorno = False
         
-    return retorno
+    #return retorno
+
+def verificar_respuesta(pregunta_actual: dict, datos_juego: dict, respuesta: int) -> dict:
+    
+    if type(pregunta_actual) == dict and pregunta_actual.get("respuesta_correcta") != None:
+        
+        if respuesta == pregunta_actual.get("respuesta_correcta"):
+           
+            return modificar_puntuacion(datos_juego, 100)
+        else:
+            
+            estado_despues_puntuacion = modificar_puntuacion(datos_juego, -25)
+            
+            return modificar_vida(estado_despues_puntuacion, -1)
+            
+    
+    return datos_juego
 
 # ============================================================
 #  MANEJO DE LISTA DE PREGUNTAS
@@ -123,29 +141,32 @@ def mezclar_lista(lista_preguntas: list) -> bool:
 #  REINICIO / FINAL DE PARTIDA
 # ============================================================
 
-def reiniciar_estadisticas(datos_juego: dict) -> bool:
-    if type(datos_juego) == dict:
-        retorno = True
+def reiniciar_estadisticas(datos_juego: dict) -> dict:
         datos_juego.update({
             "tiempo_total": TIEMPO_PARTIDA,
             "puntuacion": 0,
             "cantidad_vidas": CANTIDAD_VIDAS,
         })
-    else:
-        retorno = False
-    
-    return retorno
+        return datos_juego
 
-def actualizar_tiempo(tiempo_inicio: float, tiempo_actual: float, datos_juego: dict) -> bool:
-    if type(datos_juego) == dict:
-        retorno = True
-        tiempo_transcurrido = int(tiempo_actual - tiempo_inicio)
-        datos_juego["tiempo_restante"] = TIEMPO_PARTIDA - tiempo_transcurrido
-    else:
-        retorno = False
+def actualizar_tiempo(tiempo_inicio: float, tiempo_actual: float, datos_juego: dict) -> dict:
+    #if type(datos_juego) == dict:
+        #retorno = True
+    tiempo_transcurrido_s = (tiempo_actual - tiempo_inicio) / 1000
+        #datos_juego["tiempo_restante"] = TIEMPO_PARTIDA - tiempo_transcurrido
+    #else:
+        #retorno = False
         
-    return retorno
+    #return retorno
+    tiempo_restante = TIEMPO_PARTIDA - tiempo_transcurrido_s
 
+    if tiempo_restante <= 0:
+        datos_juego["tiempo_restante"] = 0
+        datos_juego["game_over"] = True
+    else:
+        datos_juego["tiempo_restante"] = int(tiempo_restante)
+
+    return datos_juego 
 # ============================================================
 #  FUNCIONES PYGAME (GRÁFICAS)
 # ============================================================
@@ -159,12 +180,14 @@ def mostrar_presentacion(pantalla, cola_eventos):
     pantalla.blit(fondo, (0,0))
 
     # Botón jugar
-    boton = pygame.Rect(150, 420, 300, 80)
+    boton = pygame.Rect(X_CENTRO_BOTON, Y_POSICION_FIJA, ANCHO_BOTON, ALTO_BOTON)
     pygame.draw.rect(pantalla, (255,165,0), boton)
 
     fuente = pygame.font.SysFont("Arial", 45, True)
     texto = fuente.render("JUGAR", True, (255,255,255))
-    pantalla.blit(texto, (235,435))
+    texto_rect = texto.get_rect()
+    texto_rect.center = boton.center
+    pantalla.blit(texto, texto_rect)
 
     for evento in cola_eventos:
         if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:
@@ -201,18 +224,36 @@ def mostrar_datos_juego_pygame(pantalla: pygame.Surface, datos_juego: dict):
     mostrar_texto(pantalla,f"Puntuacion: {datos_juego.get('puntuacion')}",(10,35),FUENTE_ARIAL_20)
     mostrar_texto(pantalla,f"Vidas: {datos_juego.get('cantidad_vidas')}",(10,60),FUENTE_ARIAL_20)
     
-def responder_pregunta_pygame(lista_respuestas: list, pos_click: tuple, sonido: pygame.mixer.Sound, datos_juego: dict,lista_preguntas: list, pregunta_actual: dict) -> bool:
+#def responder_pregunta_pygame(lista_respuestas: list, pos_click: tuple, sonido: pygame.mixer.Sound, datos_juego: dict,lista_preguntas: list, pregunta_actual: dict) -> bool:
+    #if (type(lista_respuestas) == list and type(pos_click) == tuple and type(datos_juego) == dict and type(lista_preguntas) == list and type(pregunta_actual) == dict and len(lista_respuestas) > 0):
+        
+    #    for i in range(len(lista_respuestas)):
+     #       if lista_respuestas[i]["rectangulo"].collidepoint(pos_click):
+      #          sonido.play()
+       #         respuesta = i + 1
+        #        verificar_respuesta(pregunta_actual,datos_juego,respuesta)
+         #       pasar_pregunta(datos_juego,lista_preguntas)
+          #      return True
+    
+    #return False       
+def responder_pregunta_pygame(lista_respuestas: list, pos_click: tuple, sonido: pygame.mixer.Sound, datos_juego: dict,lista_preguntas: list, pregunta_actual: dict) -> dict: # Cambio a dict
+    
     if (type(lista_respuestas) == list and type(pos_click) == tuple and type(datos_juego) == dict and type(lista_preguntas) == list and type(pregunta_actual) == dict and len(lista_respuestas) > 0):
         
         for i in range(len(lista_respuestas)):
             if lista_respuestas[i]["rectangulo"].collidepoint(pos_click):
                 sonido.play()
                 respuesta = i + 1
-                verificar_respuesta(pregunta_actual,datos_juego,respuesta)
-                pasar_pregunta(datos_juego,lista_preguntas)
-                return True
+                
+                # 1. ESTADO 1: Actualiza puntos/vidas
+                estado_despues_respuesta = verificar_respuesta(pregunta_actual, datos_juego, respuesta) 
+                
+                # 2. Pasa a la siguiente pregunta (debe retornar el nuevo dict)
+                nuevo_estado = pasar_pregunta(estado_despues_respuesta, lista_preguntas)
+                
+                return nuevo_estado # Retorna el diccionario de estado FINAL
     
-    return False       
+    return datos_juego
 
 def mostrar_pregunta_pygame(pregunta_actual: dict, pantalla: pygame.Surface, cuadro_pregunta: dict,lista_respuestas: list) -> bool:
     if type(pregunta_actual) == dict:
@@ -221,10 +262,10 @@ def mostrar_pregunta_pygame(pregunta_actual: dict, pantalla: pygame.Surface, cua
         mostrar_texto(cuadro_pregunta["superficie"],pregunta_actual.get("pregunta"),(10,10),FUENTE_ARIAL_30)
         pantalla.blit(cuadro_pregunta["superficie"],cuadro_pregunta["rectangulo"])
         
-        mostrar_texto(lista_respuestas[0]["superficie"],pregunta_actual.get("respuesta_1"),(20,20),FUENTE_ARIAL_20,COLOR_BLANCO)
-        mostrar_texto(lista_respuestas[1]["superficie"],pregunta_actual.get("respuesta_2"),(20,20),FUENTE_ARIAL_20,COLOR_BLANCO)
-        mostrar_texto(lista_respuestas[2]["superficie"],pregunta_actual.get("respuesta_3"),(20,20),FUENTE_ARIAL_20,COLOR_BLANCO)
-        mostrar_texto(lista_respuestas[3]["superficie"],pregunta_actual.get("respuesta_4"),(20,20),FUENTE_ARIAL_20,COLOR_BLANCO)     
+        mostrar_texto(lista_respuestas[0]["superficie"],pregunta_actual.get("respuesta_1"),(20,20),FUENTE_ARIAL_20,COLOR_GRIS_CLARO)
+        mostrar_texto(lista_respuestas[1]["superficie"],pregunta_actual.get("respuesta_2"),(20,20),FUENTE_ARIAL_20,COLOR_GRIS_CLARO)
+        mostrar_texto(lista_respuestas[2]["superficie"],pregunta_actual.get("respuesta_3"),(20,20),FUENTE_ARIAL_20,COLOR_GRIS_CLARO)
+        mostrar_texto(lista_respuestas[3]["superficie"],pregunta_actual.get("respuesta_4"),(20,20),FUENTE_ARIAL_20,COLOR_GRIS_CLARO)     
         
         for i in range(len(lista_respuestas)):
             pantalla.blit(lista_respuestas[i]["superficie"],lista_respuestas[i]["rectangulo"]) 

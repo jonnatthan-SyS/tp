@@ -11,7 +11,7 @@ from Termiado import *
 
 from Manejo_de_archivos import leer_csv_preguntas
 
-lista_preguntas = leer_csv_preguntas("PREGUNTAS.CSV")
+lista_preguntas = leer_csv_preguntas("Segundo parcial\preguntas.csv")
 
 pygame.init()
 pygame.display.set_caption("TRIVIAL")
@@ -39,7 +39,7 @@ while ejecutando:
         ventana_actual = mostrar_presentacion(pantalla, cola_eventos)
 
     elif ventana_actual == "menu":
-        ventana_actual = mostrar_menu(pantalla, cola_eventos)
+        ventana_actual, datos_juego = mostrar_menu(pantalla, cola_eventos, datos_juego)
     
     elif ventana_actual == "jugar":
         ventana_actual = mostrar_juego(pantalla, cola_eventos, datos_juego)

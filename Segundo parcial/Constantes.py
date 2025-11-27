@@ -9,7 +9,7 @@ PANTALLA = (ANCHO, ALTO)
 FPS = 30
 
 # COLORES
-COLOR_BLANCO = (255,255,255)
+COLOR_GRIS_CLARO = (200,200,200)
 COLOR_AZUL = (18,73,224)
 COLOR_NEGRO = (0,0,0)
 
@@ -38,3 +38,9 @@ FUENTE_ARIAL_50_NEGRITA = pygame.font.SysFont("Arial",50,True)
 # SONIDOS
 SONIDO_CLICK = pygame.mixer.Sound("Segundo parcial/Sonidos/click.mp3")
 SONIDO_ERROR = pygame.mixer.Sound("Segundo parcial/Sonidos/error.mp3")
+
+#BOTON JUGAR
+ANCHO_BOTON = 300
+ALTO_BOTON = 80
+Y_POSICION_FIJA = 420
+X_CENTRO_BOTON = (ANCHO// 2) - (ANCHO_BOTON // 2)
