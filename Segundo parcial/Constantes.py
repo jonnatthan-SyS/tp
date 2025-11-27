@@ -16,7 +16,7 @@ COLOR_NEGRO = (0,0,0)
 
 # LOGICA DEL JUEGO
 CANTIDAD_VIDAS = 3
-TIEMPO_PARTIDA = 30
+TIEMPO_PARTIDA = 190
 
 
 # ELEMENTOS DEL  JUEGO
@@ -39,3 +39,4 @@ FUENTE_ARIAL_50_NEGRITA = pygame.font.SysFont("Arial",50,True)
 # SONIDOS
 SONIDO_CLICK = pygame.mixer.Sound("Segundo parcial\Sonidos\click.mp3")
 SONIDO_ERROR = pygame.mixer.Sound("Segundo parcial\Sonidos\error.mp3")
+MUSICA_FONDO = "Segundo parcial\Sonidos\chill_lofi_music.mp3"

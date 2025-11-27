@@ -38,9 +38,10 @@ def crear_datos_juego() -> dict:
         "puntuacion": 0,
         "cantidad_vidas": CANTIDAD_VIDAS,
         "indice": 0,
-        "volumen_musica": 100,
+        "volumen_musica": 25,
         "bandera_texto": False,
         "tiempo_inicio": None,
+        "aciertos_consecutivos": 0,        
     }
     return datos_juego
 
@@ -86,6 +87,10 @@ def verificar_respuesta(pregunta_actual: dict, datos_juego: dict, respuesta: int
         retorno = True
         if respuesta == pregunta_actual.get("respuesta_correcta"):
             modificar_puntuacion(datos_juego, 100)
+            datos_juego['aciertos_consecutivos'] += 1
+            if datos_juego['aciertos_consecutivos'] >= 5:
+                modificar_vida(datos_juego, 1   )
+                datos_juego['aciertos_consecutivos'] = 0
         else:
             modificar_puntuacion(datos_juego, -25)
             modificar_vida(datos_juego, -1)
@@ -135,6 +140,7 @@ def reiniciar_estadisticas(datos_juego: dict) -> bool:
             "cantidad_vidas": CANTIDAD_VIDAS,
             "tiempo_restante": TIEMPO_PARTIDA,
             "tiempo_inicio": None,
+            "aciertos_consetivos": 0,
         })
     else:
         retorno = False

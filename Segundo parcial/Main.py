@@ -26,6 +26,8 @@ datos_juego = crear_datos_juego()
 datos_juego["preguntas"] = lista_preguntas
 bandera_juego = False
 
+cambiar_musica_fondo(MUSICA_FONDO, datos_juego)
+
 ventana_actual = "presentacion"
 
 while ejecutando:
