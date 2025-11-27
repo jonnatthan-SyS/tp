@@ -54,7 +54,19 @@ def obtener_pregunta_actual(datos_juego:dict,lista_preguntas:list) -> dict | Non
         else:
             return None
         
-    return None   
+    return None  
+
+def corriendo_tiempo(datos_juego: dict, tiempo_inicio: float, tiempo_actual: float) -> dict:
+        tiempo_transcurrido_s = (tiempo_actual - tiempo_inicio) / 1000.0
+        tiempo_restante = TIEMPO_PARTIDA - tiempo_transcurrido_s
+
+        if tiempo_restante <= 0:
+            datos_juego["tiempo_restante"] = 0
+            datos_juego["game_over"] = True
+        else:
+            datos_juego["tiempo_restante"] = tiempo_restante
+
+        return datos_juego
 
 # ============================================================
 #  PUNTOS - VIDAS - RESPUESTAS
@@ -159,12 +171,12 @@ def mostrar_presentacion(pantalla, cola_eventos):
     pantalla.blit(fondo, (0,0))
 
     # Botón jugar
-    boton = pygame.Rect(150, 420, 300, 80)
+    boton = pygame.Rect(300, 430, 300, 80)
     pygame.draw.rect(pantalla, (255,165,0), boton)
 
     fuente = pygame.font.SysFont("Arial", 45, True)
     texto = fuente.render("JUGAR", True, (255,255,255))
-    pantalla.blit(texto, (235,435))
+    pantalla.blit(texto, (380,440))
 
     for evento in cola_eventos:
         if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:

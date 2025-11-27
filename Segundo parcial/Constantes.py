@@ -11,6 +11,7 @@ FPS = 30
 # COLORES
 COLOR_BLANCO = (255,255,255)
 COLOR_AZUL = (18,73,224)
+COLOR_AZUL_OSCURO = (0,0,128)
 COLOR_NEGRO = (0,0,0)
 
 # LOGICA DEL JUEGO
@@ -36,5 +37,5 @@ FUENTE_ARIAL_50 = pygame.font.SysFont("Arial",50,False)
 FUENTE_ARIAL_50_NEGRITA = pygame.font.SysFont("Arial",50,True)
 
 # SONIDOS
-SONIDO_CLICK = pygame.mixer.Sound("Segundo parcial/Sonidos/click.mp3")
-SONIDO_ERROR = pygame.mixer.Sound("Segundo parcial/Sonidos/error.mp3")
+SONIDO_CLICK = pygame.mixer.Sound("Segundo parcial\Sonidos\click.mp3")
+SONIDO_ERROR = pygame.mixer.Sound("Segundo parcial\Sonidos\error.mp3")
