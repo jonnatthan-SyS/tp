@@ -41,6 +41,7 @@ def crear_datos_juego() -> dict:
         "volumen_musica": 100,
         "bandera_texto": False,
         "tiempo_inicio": None,
+        "respuestas_correctas": 0,
     }
     return datos_juego
 
@@ -86,6 +87,9 @@ def verificar_respuesta(pregunta_actual: dict, datos_juego: dict, respuesta: int
         retorno = True
         if respuesta == pregunta_actual.get("respuesta_correcta"):
             modificar_puntuacion(datos_juego, 100)
+            datos_juego["respuestas_correctas"] = datos_juego.get("respuestas_correctas", 0) + 1
+            if datos_juego["respuestas_correctas"] >= 5:
+                modificar_vida(datos_juego, 1)
         else:
             modificar_puntuacion(datos_juego, -25)
             modificar_vida(datos_juego, -1)
@@ -135,6 +139,7 @@ def reiniciar_estadisticas(datos_juego: dict) -> bool:
             "cantidad_vidas": CANTIDAD_VIDAS,
             "tiempo_restante": TIEMPO_PARTIDA,
             "tiempo_inicio": None,
+            "respuestas_correctas": 0,
         })
     else:
         retorno = False
@@ -178,7 +183,7 @@ def mostrar_presentacion(pantalla, cola_eventos):
 
     # Botón jugar
     boton = pygame.Rect(300, 430, 300, 80)
-    pygame.draw.rect(pantalla, (255,165,0), boton)
+    pygame.draw.rect(pantalla, (255,165,0), boton, border_radius=30)
 
     fuente = pygame.font.SysFont("Arial", 45, True)
     texto = fuente.render("JUGAR", True, (255,255,255))
@@ -215,9 +220,9 @@ def crear_lista_respuestas(textura: str, x: int, y: int, cantidad_respuestas: in
     return lista_respuestas
 
 def mostrar_datos_juego_pygame(pantalla: pygame.Surface, datos_juego: dict):
-    mostrar_texto(pantalla,f"Tiempo restante: {datos_juego.get('tiempo_restante')} s",(10,10),FUENTE_ARIAL_20)
-    mostrar_texto(pantalla,f"Puntuacion: {datos_juego.get('puntuacion')}",(10,35),FUENTE_ARIAL_20)
-    mostrar_texto(pantalla,f"Vidas: {datos_juego.get('cantidad_vidas')}",(10,60),FUENTE_ARIAL_20)
+    mostrar_texto(pantalla,f"Tiempo restante: {datos_juego.get('tiempo_restante')} s",(10,10),FUENTE_ARIAL_30)
+    mostrar_texto(pantalla,f"Puntuacion: {datos_juego.get('puntuacion')}",(10,35),FUENTE_ARIAL_30)
+    mostrar_texto(pantalla,f"Vidas: {datos_juego.get('cantidad_vidas')}",(10,60),FUENTE_ARIAL_30)
     
 def responder_pregunta_pygame(lista_respuestas: list, pos_click: tuple, sonido: pygame.mixer.Sound, datos_juego: dict,lista_preguntas: list, pregunta_actual: dict) -> bool:
     if (type(lista_respuestas) == list and type(pos_click) == tuple and type(datos_juego) == dict and type(lista_preguntas) == list and type(pregunta_actual) == dict and len(lista_respuestas) > 0):
@@ -239,10 +244,10 @@ def mostrar_pregunta_pygame(pregunta_actual: dict, pantalla: pygame.Surface, cua
         mostrar_texto(cuadro_pregunta["superficie"],pregunta_actual.get("pregunta"),(10,10),FUENTE_ARIAL_30)
         pantalla.blit(cuadro_pregunta["superficie"],cuadro_pregunta["rectangulo"])
         
-        mostrar_texto(lista_respuestas[0]["superficie"],pregunta_actual.get("respuesta_1"),(20,20),FUENTE_ARIAL_20,COLOR_BLANCO)
-        mostrar_texto(lista_respuestas[1]["superficie"],pregunta_actual.get("respuesta_2"),(20,20),FUENTE_ARIAL_20,COLOR_BLANCO)
-        mostrar_texto(lista_respuestas[2]["superficie"],pregunta_actual.get("respuesta_3"),(20,20),FUENTE_ARIAL_20,COLOR_BLANCO)
-        mostrar_texto(lista_respuestas[3]["superficie"],pregunta_actual.get("respuesta_4"),(20,20),FUENTE_ARIAL_20,COLOR_BLANCO)     
+        mostrar_texto(lista_respuestas[0]["superficie"],pregunta_actual.get("respuesta_1"),(20,20),FUENTE_ARIAL_20_NEGRITA,COLOR_NEGRO)
+        mostrar_texto(lista_respuestas[1]["superficie"],pregunta_actual.get("respuesta_2"),(20,20),FUENTE_ARIAL_20_NEGRITA,COLOR_NEGRO)
+        mostrar_texto(lista_respuestas[2]["superficie"],pregunta_actual.get("respuesta_3"),(20,20),FUENTE_ARIAL_20_NEGRITA,COLOR_NEGRO)
+        mostrar_texto(lista_respuestas[3]["superficie"],pregunta_actual.get("respuesta_4"),(20,20),FUENTE_ARIAL_20_NEGRITA,COLOR_NEGRO)     
         
         for i in range(len(lista_respuestas)):
             pantalla.blit(lista_respuestas[i]["superficie"],lista_respuestas[i]["rectangulo"]) 

@@ -6,7 +6,7 @@ pygame.init()
 
 fondo_menu = pygame.transform.scale(pygame.image.load("Segundo parcial/Texturas/Fondo_menu.jpg"),PANTALLA)
 
-lista_botones = crear_lista_botones("Segundo parcial/Texturas/Fondo_boton.jpeg",150,125,4)
+lista_botones = crear_lista_botones("Segundo parcial/Texturas/botones.png",300,120,4)
 
 lista_texto_botones = ["JUGAR","AJUSTES","RANKINGS","SALIR "]
 
