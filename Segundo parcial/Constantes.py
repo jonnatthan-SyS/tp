@@ -13,6 +13,7 @@ COLOR_BLANCO = (255,255,255)
 COLOR_AZUL = (18,73,224)
 COLOR_AZUL_OSCURO = (0,0,128)
 COLOR_NEGRO = (0,0,0)
+COLOR_GRIS_CLARO = (200,200,200)
 
 # LOGICA DEL JUEGO
 CANTIDAD_VIDAS = 3
@@ -30,6 +31,7 @@ ANCHO_BOTON = 300
 ALTO_BOTON = 80
 
 # FUENTES (se inicializan luego)
+FUENTE_ARIAL_20_NEGRITA = pygame.font.SysFont("Arial",20,True)
 FUENTE_ARIAL_20 = pygame.font.SysFont("Arial",20,False)
 FUENTE_ARIAL_25 = pygame.font.SysFont("Arial",25,False)
 FUENTE_ARIAL_30 = pygame.font.SysFont("Arial",30,True)
@@ -40,3 +42,9 @@ FUENTE_ARIAL_50_NEGRITA = pygame.font.SysFont("Arial",50,True)
 SONIDO_CLICK = pygame.mixer.Sound("Segundo parcial\Sonidos\click.mp3")
 SONIDO_ERROR = pygame.mixer.Sound("Segundo parcial\Sonidos\error.mp3")
 MUSICA_FONDO = "Segundo parcial\Sonidos\chill_lofi_music.mp3"
+
+#Boton Jugar
+ANCHO_BOTON = 300
+ALTO_BOTON = 80
+Y_POSICION_FIJA = 430
+X_CENTRO_BOTON = (ANCHO// 2) - (ANCHO_BOTON // 2)

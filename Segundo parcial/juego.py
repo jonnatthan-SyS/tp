@@ -31,7 +31,7 @@ def mostrar_juego(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event],
     if datos_juego.get("cantidad_vidas") == 0:
         ventana = "terminado"
     
-    pantalla.fill(COLOR_AZUL_OSCURO)
+    pantalla.fill(COLOR_GRIS_CLARO)
     mostrar_datos_juego_pygame(pantalla,datos_juego)
     mostrar_pregunta_pygame(pregunta_actual,pantalla,cuadro_pregunta,lista_respuestas)
     
