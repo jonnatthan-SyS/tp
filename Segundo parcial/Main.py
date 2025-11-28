@@ -9,7 +9,7 @@ from ajustes import *
 from Rankings import *
 from Termiado import *
 
-from Manejo_de_archivos import leer_csv_preguntas
+from Manejo_de_archivos import *
 
 lista_preguntas = leer_csv_preguntas("PREGUNTAS.CSV")
 
@@ -56,7 +56,8 @@ while ejecutando:
         ventana_actual = mostrar_ajustes(pantalla, cola_eventos, datos_juego)
     
     elif ventana_actual == "rankings":
-        ventana_actual = mostrar_rankings(pantalla, cola_eventos, datos_juego)
+        top_10_mejores = obtener_top_10()
+        ventana_actual = mostrar_rankings(pantalla, cola_eventos, top_10_mejores)
     
     elif ventana_actual == "terminado":
         ventana_actual = mostrar_game_over(pantalla, cola_eventos, datos_juego)

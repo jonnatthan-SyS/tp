@@ -1,6 +1,7 @@
 from Preguntas import *
 import json
 import os
+import datetime
 
 def generar_json(nombre_archivo: str, lista: list) -> bool:
     if type(lista) == list and len(lista) > 0:
@@ -133,6 +134,52 @@ def unir_cadena(lista:list,separador:str) -> str:
             cadena_nueva += f"{str(lista[i])}{separador}"
         
     return cadena_nueva
+
+def guardar_partida(nombre : str, puntuacion : int) -> None:
+    partida = {
+        "nombre": nombre,
+        "puntuacion": puntuacion,
+        "fecha": datetime.datetime.now().strftime("%d-%m-%Y"),   
+    }
+
+    lista_partidas = leer_json("partidas.json")
+
+    if lista_partidas is False:
+        lista_partidas = []
+
+    lista_partidas = lista_partidas + [partida]
+
+    generar_json("partidas.json", lista_partidas)
+
+def obtener_top_10() -> list:
+    lista_partidas = leer_json("partidas.json")
+    
+    if  lista_partidas is False:
+        return[]
+    
+    top_10 = []
+    for i in range(10):
+        # Si ya no quedan partidas, salimos del bucle
+        if len(lista_partidas) == 0:
+            break
+            
+        max_puntuacion = -1 # Se inicializa la puntuación máxima con un valor imposible
+        indice_mejor = -1
+        for j in range(len(lista_partidas)):
+            partida_actual = lista_partidas[j]
+            puntuacion_actual = partida_actual.get("puntuacion", 0)
+
+            if puntuacion_actual > max_puntuacion:
+                max_puntuacion = puntuacion_actual
+                indice_mejor = j
+
+        if indice_mejor != -1:
+            mejor_partida = lista_partidas[indice_mejor]
+            
+            top_10 = top_10 + [mejor_partida]
+            
+            del lista_partidas[indice_mejor]
+    return top_10
 
 # Recuerden chicos cuando tengan que hacer los comodines pongan toda la info que necesiten los mismos en los datos_juego, ya que no tenemos objetos es la única forma de comunicar la info en tiempo real en el juego
 

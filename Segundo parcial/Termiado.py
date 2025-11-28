@@ -1,6 +1,7 @@
 import pygame
 from Constantes import *
 from Funciones import *
+from Manejo_de_archivos import *
 
 pygame.init()
 
@@ -8,6 +9,8 @@ def mostrar_game_over(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Eve
     datos_juego["bandera_texto"] = not datos_juego["bandera_texto"]
     ventana = "terminado"
     cuadro_texto = crear_elemento_juego("Segundo parcial/Texturas/textura.jpg",300,50,150,275)
+
+    boton_continuar = crear_elemento_juego("ruta/textura_continuar.png", 200, 50, 600, 275)
     
     for evento in cola_eventos:
         if evento.type == pygame.TEXTINPUT:
@@ -15,6 +18,21 @@ def mostrar_game_over(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Eve
         elif evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_BACKSPACE:
                 datos_juego["nombre"] = datos_juego["nombre"][0:-1]
+                puntuacion = datos_juego.get("puntiacion", 0)
+            elif evento.key == pygame.K_RETURN: 
+                nombre = datos_juego.get("nombre", "")
+                puntuacion = datos_juego.get("puntuacion", 0)
+                
+                nombre_limpio = nombre
+                while len(nombre_limpio) > 0 and nombre_limpio[-1] == ' ':
+                    nombre_limpio = nombre_limpio[:-1]
+
+                if len(nombre_limpio) >= 3: 
+                    guardar_partida(nombre_limpio, puntuacion)
+                    SONIDO_CLICK.play()
+                    return "menu"
+                else:
+                    SONIDO_ERROR.play()
         
     #lista_teclas con el key_pressed --> Pero va a borrar muy rapido
     #Si van a usar el get_pressed bajen los FPS

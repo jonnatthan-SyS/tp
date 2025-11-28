@@ -278,3 +278,6 @@ def cambiar_musica_fondo(musica: str, datos_juego: dict) -> bool:
         retorno = False
         
     return retorno
+
+
+    
