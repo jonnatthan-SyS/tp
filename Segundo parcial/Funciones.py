@@ -38,7 +38,7 @@ def crear_datos_juego() -> dict:
         "puntuacion": 0,
         "cantidad_vidas": CANTIDAD_VIDAS,
         "indice": 0,
-        "volumen_musica": 25,
+        "volumen_musica": 5,
         "bandera_texto": False,
         "tiempo_inicio": None,
         "aciertos_consecutivos": 0,

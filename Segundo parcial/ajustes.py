@@ -7,23 +7,16 @@ pygame.init()
 # ============================================================
 #  Funcionamiento de Barra / Volumen
 # ============================================================
-ANCHO_BOTON_VOLUMEN = 60
-ALTO_BOTON_VOLUMEN = 90
-ANCHO_BARRA = 250
-ESPACIO_ENTRE_BOTONES = ANCHO_BARRA + 30
-POS_Y_VOLUMEN = 300
-CENTRO_X_BOTONES = (ANCHO // 2) - (ANCHO_BOTON_VOLUMEN * 2 + ESPACIO_ENTRE_BOTONES) // 2
 
-POS_X_RESTA = CENTRO_X_BOTONES
+
+
 boton_resta = crear_elemento_juego("Segundo parcial\Texturas\Boton bajar volumen.png",ANCHO_BOTON_VOLUMEN, ALTO_BOTON_VOLUMEN, POS_X_RESTA, POS_Y_VOLUMEN)
-POS_X_SUMA = POS_X_RESTA + ANCHO_BOTON_VOLUMEN + ESPACIO_ENTRE_BOTONES
+
 boton_suma = crear_elemento_juego("Segundo parcial\Texturas\Boton subir volumen.png",ANCHO_BOTON_VOLUMEN, ALTO_BOTON_VOLUMEN, POS_X_SUMA, POS_Y_VOLUMEN)
 boton_volver = crear_elemento_juego("Segundo parcial\Texturas\Boton_volver_ajustes.webp",50,50,10,10)
 
 
-ALTO_BARRA = 20
-POS_X_BARRA = (ANCHO // 2) - (ANCHO_BARRA // 2)
-POS_Y_BARRA = 300
+
 barra_vacia = pygame.image.load("Segundo parcial\Texturas\Barra_vacia.png")
 barra_llena = pygame.image.load("Segundo parcial\Texturas\Barra_llena.png")
 

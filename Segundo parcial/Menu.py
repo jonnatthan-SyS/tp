@@ -8,7 +8,7 @@ fondo_menu = pygame.transform.scale(pygame.image.load("Segundo parcial/Texturas/
 
 lista_botones = crear_lista_botones("Segundo parcial/Texturas/botones.png",300,120,4)
 
-lista_texto_botones = ["JUGAR","AJUSTES","RANKINGS","SALIR "]
+lista_texto_botones = ["JUGAR","AJUSTES","RANKINGS","SALIR"]
 
 def mostrar_menu(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event]) -> str:
     ventana = "menu"
@@ -20,7 +20,7 @@ def mostrar_menu(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event]) 
                     ventana = lista_texto_botones[i].lower()
 
                     if ventana == "salir":
-                        return "salir"
+                        return "presentacion"
                     else:
                         SONIDO_CLICK.play()
                         return ventana
