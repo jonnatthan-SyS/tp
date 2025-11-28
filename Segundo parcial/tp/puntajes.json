@@ -1,0 +1,35 @@
+[
+    {
+        "nombre": "hola",
+        "puntuacion": -75
+    },
+    {
+        "nombre": "hola",
+        "puntuacion": -75
+    },
+    {
+        "nombre": "jorge",
+        "puntuacion": 25,
+        "fecha": "28-11-2025"
+    },
+    {
+        "nombre": "jose",
+        "puntuacion": 125,
+        "fecha": "28-11-2025"
+    },
+    {
+        "nombre": "asdddddd",
+        "puntuacion": 25,
+        "fecha": "28-11-2025"
+    },
+    {
+        "nombre": "iara",
+        "puntuacion": 125,
+        "fecha": "28-11-2025"
+    },
+    {
+        "nombre": "marto facha",
+        "puntuacion": 425,
+        "fecha": "28-11-2025"
+    }
+]
