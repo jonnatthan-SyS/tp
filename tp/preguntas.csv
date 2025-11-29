@@ -1,0 +1,91 @@
+categoria;dificultad;pregunta;respuesta_1;respuesta_2;respuesta_3;respuesta_4;respuesta_correcta
+futbol;facil;¿Quién es considerado el mejor jugador del mundo por muchos y campeón del mundo en 2022?;Cristiano Ronaldo;Lionel Messi;Mbappé;Modric;2
+futbol;facil;¿En qué deporte se utiliza una pelota número 5?;Vóley;Básquet;Fútbol;Handball;3
+futbol;facil;¿Cuántos jugadores tiene un equipo de fútbol dentro de la cancha?;9;10;11;12;3
+futbol;facil;¿Qué selección ganó la Copa del Mundo 2014?;Argentina;Alemania;Brasil;España;2
+futbol;facil;¿Cuál es el máximo torneo de clubes europeo?;Europa League;Champions League;Conference League;Supercopa;2
+futbol;facil;¿Qué país es famoso por el jugador Pelé?;Argentina;Brasil;Chile;Uruguay;2
+futbol;facil;¿Qué árbitro dirige un partido de fútbol?;Director;Árbitro;Entrenador;DT;2
+futbol;facil;¿Qué se saca tras cometer una falta dentro del área?;Corner;Penal;Lateral;Saque de arco;2
+futbol;facil;¿Qué club es conocido como 'El Barca'?;Real Madrid;Barcelona;Sevilla;Valencia;2
+futbol;facil;¿De qué país es Diego Maradona?;Argentina;España;Brasil;Italia;1
+futbol;media;¿En qué año ganó Argentina su primera Copa del Mundo?;1974;1978;1982;1986;2
+futbol;media;¿Qué club es conocido como 'Los Diablos Rojos'?;Liverpool;Benfica;Manchester United;Bayern Munich;3
+futbol;media;¿Cuál es el apodo de la selección italiana?;La Roja;La Canarinha;La Albiceleste;La Azzurra;4
+futbol;media;¿En qué club debutó Lionel Messi profesionalmente?;Newell's;Inter Miami;FC Barcelona;PSG;3
+futbol;media;¿Qué selección ganó la Copa del Mundo 1998?;Brasil;Argentina;Francia;Alemania;3
+futbol;media;¿Qué jugador es conocido como 'El Fenómeno'?;Zidane;Ronaldo Nazário;Ronaldinho;Kaká;2
+futbol;media;¿Qué club ganó la primera edición de la Champions League en 1956?;AC Milan;Benfica;Real Madrid;Manchester United;3
+futbol;media;¿Cuál seleccion ganó la Copa América 2021?;Brasil;Argentina;Uruguay;Chile;2
+futbol;media;¿Quién fue el entrenador campeón del mundo con España en 2010?;Luis Aragonés;Vicente del Bosque;Pep Guardiola;Luis Enrique;2
+futbol;media;¿Qué selección ganó la primera Copa del Mundo en 1930?;Argentina;Brasil;Italia;Uruguay;4
+futbol;dificil;¿En qué equipo jugaba Maradona cuando ganó el Balón de Oro en 1986?;Barcelona;Napoli;Boca Juniors;Sevilla;2
+futbol;dificil;¿Cuál es el único club argentino que ganó la Copa Intercontinental 3 veces?;River Plate;Boca Juniors;Independiente;Racing Club;2
+futbol;dificil;¿En qué año se instauró el uso de tarjetas amarillas y rojas en el fútbol?;1966;1970;1974;1982;2
+futbol;dificil;¿Quién fue el primer jugador en superar los 800 goles oficiales en su carrera?;Cristiano Ronaldo;Messi;Pelé;Romário;1
+futbol;dificil;¿Cuál fue el primer club de la historia en ganar el sextete?;Bayern Munich;Real Madrid;Barcelona;Inter de Milán;3
+futbol;dificil;¿Quién fue el técnico campeón del mundo con Alemania en 2014?;Joachim Löw;Jurgen Klopp;Hansi Flick;Rudi Völler;1
+futbol;dificil;¿Qué selección quedó subcampeona en el Mundial 1994?;Italia;Argentina;Holanda;Alemania;1
+futbol;dificil;¿Qué jugador ganó el primer Balón de Oro de la historia en 1956?;Alfredo Di Stéfano;Stanley Matthews;Raymond Kopa;Eusébio;2
+futbol;dificil;¿Quién es el máximo goleador histórico de la Champions League?;Lionel Messi;Raúl;Cristiano Ronaldo;Benzema;3
+futbol;dificil;¿Qué club es conocido como 'El Rey de Copas' en Argentina?;River Plate;Independiente;San Lorenzo;Vélez;2
+juego;facil;¿Cuál es el fontanero más famoso de Nintendo?;Mario;Luigi;Toad;Wario;1
+juego;facil;¿En qué videojuego aparece el personaje 'Pikachu'?;Zelda;Pokémon;Metroid;Sonic;2
+juego;facil;¿Qué consola creó Sony?;Xbox;PlayStation;Wii;GameCube;2
+juego;facil;¿Cuál es el héroe principal de The Legend of Zelda?;Zelda;Link;Ganon;Sheik;2
+juego;facil;¿Qué personaje dice '¡Here we go!'?;Luigi;Sonic;Mario;Crash;3
+juego;facil;¿Qué tipo de juego es FIFA?;Carreras;Deportes;Aventura;Plataformas;2
+juego;facil;¿Cuál es el enemigo principal de Sonic?;Bowser;Eggman;Shadow;Metal Sonic;2
+juego;facil;¿Qué empresa creó la saga Halo?;Valve;Bungie;EA;Ubisoft;2
+juego;facil;¿Qué famoso juego tiene piezas llamadas ‘tetriminos’?;Pac-Man;Tetris;Space Invaders;Snake;2
+juego;facil;¿Cuál es el personaje principal de Minecraft?;Steve;Bob;Jack;Alex;1
+juego;medio;¿En qué juego aparece la ciudad de Raccoon City?;Silent Hill;Resident Evil;Dino Crisis;Dead Rising;2
+juego;medio;¿Cuál es el nombre completo de 'Master Chief'?;John-117;Marcus Fenix;Jack Cooper;Shepard-001;1
+juego;medio;¿Qué arma es la más icónica de Cloud en Final Fantasy VII?;Gunblade;Buster Sword;Masamune;Dragon Lance;2
+juego;medio;¿Cuál es el planeta natal de Samus Aran?;Zebes;SR388;K-2L;Talos I;3
+juego;medio;¿Cómo se llama el villano principal de Far Cry 3?;Vaas Montenegro;Pagan Min;Joseph Seed;Micah Bell;1
+juego;medio;¿Qué compañía desarrolló The Witcher 3?;BioWare;CD Projekt Red;Square Enix;Obsidian;2
+juego;medio;¿En qué año se lanzó el primer PlayStation?;1992;1994;1996;1998;2
+juego;medio;¿Cómo se llama el protagonista de Red Dead Redemption 2?;John Marston;Arthur Morgan;Dutch van der Linde;Bill Williamson;2
+juego;medio;¿Qué juego popularizó el género Battle Royale?;H1Z1;PUBG;Fortnite;Apex Legends;2
+juego;medio;¿Cuál es el nombre del mítico dragón final de Skyrim?;Alduin;Parthurnaax;Mirmulnir;Vahlok;1
+juego;dificil;¿Cómo se llama el creador original de la saga Metal Gear?;Shigeru Miyamoto;Hideo Kojima;Yoko Taro;Tetsuya Nomura;2
+juego;dificil;En Dark Souls, ¿qué objeto se usa para encender hogueras y subir de nivel?;Humanity;Estus Shard;Soul Vessel;Fire Gem;1
+juego;dificil;¿Cuál fue el primer juego en usar el término 'Metroidvania'?;Castlevania;Metroid;Super Metroid;Symphony of the Night;4
+juego;dificil;¿Cómo se llama la inteligencia artificial enemiga en System Shock?;GLADOS;SHODAN;Mother Brain;Karen;2
+juego;dificil;¿Qué juego fue desarrollado completamente por una sola persona y se volvió un éxito mundial?;Undertale;Stardew Valley;Papers, Please;Minecraft;4
+juego;dificil;¿Cuál es el nombre del planeta en el que ocurre Mass Effect 1 al comenzar el juego?;Eden Prime;Terra Nova;Noveria;Ilos;1
+juego;dificil;En Bloodborne, ¿cómo se llama la ciudad principal?;Iosefka;Cainhurst;Yharnam;Hemwick;3
+juego;dificil;¿Qué juego introdujo el personaje 'Ciri'?;The Witcher 1;The Witcher 2;The Witcher 3;Gwent;1
+juego;dificil;¿Cuál fue el primer videojuego de la historia según registros oficiales?;Pong;Spacewar!;Tennis for Two;Computer Space;2
+juego;dificil;En la saga Kingdom Hearts, ¿cómo se llama la llave-espada principal?;Oblivion;Kingdom Key;Ultima Weapon;Oathkeeper;2
+historia;facil;¿Quién fue el primer emperador romano?;Julio César;Augusto;Nerón;Trajano;2
+historia;facil;¿En qué año comenzó la Primera Guerra Mundial?;1914;1918;1939;1945;1
+historia;facil;¿Quién descubrió América en 1492?;Cristóbal Colón;Américo Vespucio;Hernán Cortés;Marco Polo;1
+historia;facil;¿Cuál de estos países fue potencia del Eje en la Segunda Guerra Mundial?;Alemania;Francia;Reino Unido;Canadá;1
+historia;facil;¿Qué gran muralla se encuentra en Asia?;Muralla Romana;Muralla de China;Muralla Azteca;Muralla de India;2
+historia;facil;¿Qué civilización construyó las pirámides de Giza?;Romanos;Mayas;Egipcios;Persas;3
+historia;facil;¿En qué década llegó el hombre a la Luna?;1950;1960;1970;1980;2
+historia;facil;¿Qué imperio gobernó Gengis Khan?;Imperio Romano;Imperio Mongol;Imperio Otomano;Imperio Persa;2
+historia;facil;¿En qué continente se desarrolló la Primera Guerra Mundial principalmente?;Asia;Europa;África;Oceanía;2
+historia;facil;¿Cuál fue la capital del Imperio Romano?;Atenas;Roma;Alejandría;Florencia;2
+historia;medio;¿Qué tratado puso fin a la Primera Guerra Mundial?;Tratado de Roma;Tratado de París;Tratado de Versalles;Tratado de Londres;3
+historia;medio;¿En qué año cayó el Muro de Berlín?;1989;1991;1985;1993;1
+historia;medio;¿Qué civilización utilizó la escritura cuneiforme?;Mesopotamia;Grecia;Roma;Egipto;1
+historia;medio;¿Qué país lideró la colonización de América del Sur?;Francia;Portugal;España;Alemania;3
+historia;medio;¿Cómo se llamaba el líder soviético durante la Segunda Guerra Mundial?;Lenin;Stalin;Gorbachev;Trotsky;2
+historia;medio;¿Qué guerra enfrentó a Estados Unidos y la URSS indirectamente?;Guerra Civil Española;Guerra Fría;Guerra de Corea;Guerra de Vietnam;2
+historia;medio;¿Cuál fue la principal ruta comercial entre Asia y Europa?;La Ruta de la Seda;La Ruta Imperial;El Camino del Inca;La Ruta Oriental;1
+historia;medio;¿Qué líder militar cruzó los Alpes en elefantes?;Alejandro Magno;César;Aníbal;Atila;3
+historia;medio;¿Qué evento inició la Revolución Francesa?;La toma de la Bastilla;La ejecución del rey;La declaración de independencia;La guerra contra Inglaterra;1
+historia;medio;¿En qué guerra luchó Napoleón Bonaparte?;Guerras Napoleónicas;Guerra de Crimea;Guerra Franco-Prusiana;Guerra Mundial;1
+historia;dificil;¿En qué año comenzó la Edad Media tras la caída del Imperio Romano de Occidente?;395;410;476;509;3
+historia;dificil;¿Qué ciudad fue capital del Imperio Bizantino?;Alejandría;Constantinopla;Antioquía;Roma;2
+historia;dificil;¿Qué gran emperador fundó el Imperio Acadio?;Sargón;Hammurabi;Nabucodonosor;Darío;1
+historia;dificil;¿Cuál de estos filósofos fue tutor de Alejandro Magno?;Platón;Sócrates;Aristóteles;Demócrito;3
+historia;dificil;¿Cuál fue la causa inmediata del inicio de la Primera Guerra Mundial?;La invasión de Polonia;El asesinato del archiduque Francisco Fernando;La caída del zar ruso;La firma del Tratado de Versalles;2
+historia;dificil;¿Qué líder militar cartaginés venció a Roma en la Batalla de Cannas?;Escipión;Aníbal;Atila;Darío;2
+historia;dificil;¿Qué tratado dividió el mundo entre España y Portugal en 1494?;Tratado de París;Tratado de Berlín;Tratado de Tordesillas;Tratado de Lisboa;3
+historia;dificil;¿Quién fue el primer emperador de la dinastía Qin en China?;Qin Shi Huang;Liu Bang;Sun Tzu;Wu Zetian;1
+historia;dificil;¿En qué año terminó oficialmente la Guerra Fría?;1989;1991;1993;1995;2
+historia;dificil;¿Qué cultura mesoamericana construyó la ciudad de Teotihuacán?;Azteca;Olmeca;Maya;Desconocida;4
