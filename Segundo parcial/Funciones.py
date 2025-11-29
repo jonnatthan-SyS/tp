@@ -223,18 +223,18 @@ def mostrar_datos_juego_pygame(pantalla: pygame.Surface, datos_juego: dict):
     mostrar_texto(pantalla,f"Puntuacion: {datos_juego.get('puntuacion')}",(10,35),FUENTE_ARIAL_30)
     mostrar_texto(pantalla,f"Vidas: {datos_juego.get('cantidad_vidas')}",(10,60),FUENTE_ARIAL_30)
     
-def responder_pregunta_pygame(lista_respuestas: list, pos_click: tuple, sonido: pygame.mixer.Sound, datos_juego: dict,lista_preguntas: list, pregunta_actual: dict) -> bool:
-    if (type(lista_respuestas) == list and type(pos_click) == tuple and type(datos_juego) == dict and type(lista_preguntas) == list and type(pregunta_actual) == dict and len(lista_respuestas) > 0):
-        
+def responder_pregunta_pygame(lista_respuestas: list, pos_click: tuple, sonido: pygame.mixer.Sound, datos_juego: dict,lista_preguntas: list, pregunta_actual: dict) -> int:
+    #if (type(lista_respuestas) == list and type(pos_click) == tuple and type(datos_juego) == dict and type(lista_preguntas) == list and type(pregunta_actual) == dict and len(lista_respuestas) > 0):
+    if type(lista_respuestas) is list and lista_respuestas:
         for i in range(len(lista_respuestas)):
             if lista_respuestas[i]["rectangulo"].collidepoint(pos_click):
                 sonido.play()
                 respuesta = i + 1
-                verificar_respuesta(pregunta_actual,datos_juego,respuesta)
-                pasar_pregunta(datos_juego,lista_preguntas)
-                return True
+                #verificar_respuesta(pregunta_actual,datos_juego,respuesta)
+                #pasar_pregunta(datos_juego,lista_preguntas)
+                return respuesta
     
-    return False       
+    return None       
 
 def mostrar_pregunta_pygame(pregunta_actual: dict, pantalla: pygame.Surface, cuadro_pregunta: dict,lista_respuestas: list) -> bool:
     if type(pregunta_actual) == dict:
@@ -280,4 +280,42 @@ def cambiar_musica_fondo(musica: str, datos_juego: dict) -> bool:
     return retorno
 
 
+def actualizar_estadisticas_pregunta(pregunta: dict, fue_correcta: bool) -> None:
     
+    veces_preguntada = pregunta.get("veces_preguntada", 0)
+    aciertos = pregunta.get("aciertos_total", 0)
+    fallos = pregunta.get("fallos_total", 0)
+
+    veces_preguntada += 1
+    
+    if fue_correcta:
+        aciertos += 1
+    else:
+        fallos += 1
+
+    if veces_preguntada > 0:
+        porcentaje_aciertos = (aciertos / veces_preguntada) * 100
+        porcentaje_aciertos = round(porcentaje_aciertos, 2)
+    else:
+        porcentaje_aciertos = 0.0
+        
+    porcentaje_aciertos = aciertos / veces_preguntada
+    pregunta["Cantidad_veces_preguntada"] = veces_preguntada
+    pregunta["Cantidad_aciertos"] = aciertos
+    pregunta["Cantidad_fallos"] = fallos
+    pregunta["Porcentaje_aciertos"] = porcentaje_aciertos
+
+def obtener_top_5_preguntas(lista_preguntas: list[dict]) -> list[dict]:
+    
+    preguntas_usadas = [
+        p for p in lista_preguntas 
+        if p.get("veces_preguntada", 0) > 0
+    ]
+
+    top_5_listo = sorted(
+        preguntas_usadas, 
+        key=lambda pregunta: pregunta.get("porcentaje_aciertos", 0.0), 
+        reverse=True
+    )
+
+    return top_5_listo[:5]

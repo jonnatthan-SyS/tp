@@ -72,6 +72,20 @@ def leer_csv_preguntas(nombre_archivo:str, separador: str = ";") -> list | None:
             valor = valores[i]
             if clave == "respuesta_correcta":
                 valor = int(valor)
+            elif clave in ("aciertos_total", "fallos_total", "veces_preguntada"):
+                
+                if valor:
+                    valor = int(valor)
+                else:
+                    valor = 0
+
+            elif clave == "porcentaje_aciertos":
+                
+                if valor:
+                    valor = float(valor)
+                else:
+                    valor = 0.0
+            
             pregunta[clave] = valor
             i += 1
         lista_preguntas.append(pregunta)
@@ -180,6 +194,31 @@ def obtener_top_10() -> list:
             
             del lista_partidas[indice_mejor]
     return top_10
+
+def guardar_cvs_preguntas(nombre: str, lista_preguntas: list, separador: str=";")->bool:
+    
+    if type(lista_preguntas) != list or len(lista_preguntas) == 0:
+        return False
+    
+    if type(lista_preguntas[0]) != dict:
+        return False
+    
+    key = list(lista_preguntas[0].keys())
+
+    cabecera = unir_cadena(key, separador)
+
+    with open("PREGUNTAS.CSV", "W", encoding="utf-8") as archivo:
+
+        archivo.write(f"{cabecera}\n")
+
+        for pregunta in lista_preguntas:
+
+            fila_valores = [str(pregunta.get(k, '')) for k in key]
+
+            fila = unir_cadena(fila_valores, separador)
+
+            archivo.write(f"{fila}\n")
+        return True
 
 # Recuerden chicos cuando tengan que hacer los comodines pongan toda la info que necesiten los mismos en los datos_juego, ya que no tenemos objetos es la única forma de comunicar la info en tiempo real en el juego
 
