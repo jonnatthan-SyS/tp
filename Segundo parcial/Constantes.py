@@ -17,7 +17,7 @@ COLOR_GRIS_CLARO = (200,200,200)
 
 # LOGICA DEL JUEGO
 CANTIDAD_VIDAS = 3
-TIEMPO_PARTIDA = 190
+TIEMPO_PARTIDA = 50
 
 
 # ELEMENTOS DEL  JUEGO
@@ -39,25 +39,14 @@ FUENTE_ARIAL_50 = pygame.font.SysFont("Arial",50,False)
 FUENTE_ARIAL_50_NEGRITA = pygame.font.SysFont("Arial",50,True)
 
 # SONIDOS
-SONIDO_CLICK = pygame.mixer.Sound("Segundo parcial\Sonidos\click.mp3")
-SONIDO_ERROR = pygame.mixer.Sound("Segundo parcial\Sonidos\error.mp3")
-MUSICA_FONDO = "Segundo parcial\Sonidos\chill_lofi_music.mp3"
+SONIDO_CLICK = pygame.mixer.Sound("Sonidos/click.mp3")
+SONIDO_ERROR = pygame.mixer.Sound("Sonidos/error.mp3")
+MUSICA_FONDO = "Sonidos/chill_lofi_music.mp3"
 
-#Boton Jugar
 ANCHO_BOTON = 300
 ALTO_BOTON = 80
 Y_POSICION_FIJA = 430
 X_CENTRO_BOTON = (ANCHO// 2) - (ANCHO_BOTON // 2)
 
-#Botones Ajustes
-ANCHO_BOTON_VOLUMEN = 60
-ALTO_BOTON_VOLUMEN = 90
-ANCHO_BARRA = 250
-ESPACIO_ENTRE_BOTONES = ANCHO_BARRA + 30
-POS_Y_VOLUMEN = 300
-CENTRO_X_BOTONES = (ANCHO // 2) - (ANCHO_BOTON_VOLUMEN * 2 + ESPACIO_ENTRE_BOTONES) // 2
-POS_X_RESTA = CENTRO_X_BOTONES
-POS_X_SUMA = POS_X_RESTA + ANCHO_BOTON_VOLUMEN + ESPACIO_ENTRE_BOTONES
-ALTO_BARRA = 20
-POS_X_BARRA = (ANCHO // 2) - (ANCHO_BARRA // 2)
-POS_Y_BARRA = 300
+Y_INICIO = 150
+Y_OFFSET = 40

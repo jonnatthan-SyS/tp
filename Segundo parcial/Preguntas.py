@@ -271,7 +271,7 @@ lista_preguntas = [
         "respuesta_4": "Vélez", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿Cuál es el fontanero más famoso de Nintendo?", 
         "respuesta_1": "Mario", 
@@ -280,7 +280,7 @@ lista_preguntas = [
         "respuesta_4": "Wario", 
         "respuesta_correcta": 1},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿En qué videojuego aparece el personaje 'Pikachu'?", 
         "respuesta_1": "Zelda", 
@@ -289,7 +289,7 @@ lista_preguntas = [
         "respuesta_4": "Sonic", 
         "respuesta_correcta": 2},
     {
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿Qué consola creó Sony?", 
         "respuesta_1": "Xbox", 
@@ -298,7 +298,7 @@ lista_preguntas = [
         "respuesta_4": "GameCube", 
         "respuesta_correcta": 2},
     {
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿Cuál es el héroe principal de The Legend of Zelda?", 
         "respuesta_1": "Zelda", 
@@ -307,7 +307,7 @@ lista_preguntas = [
         "respuesta_4": "Sheik", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿Qué personaje dice '¡Here we go!'?", 
         "respuesta_1": "Luigi", 
@@ -316,7 +316,7 @@ lista_preguntas = [
         "respuesta_4": "Crash", 
         "respuesta_correcta": 3},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿Qué tipo de juego es FIFA?", 
         "respuesta_1": "Carreras", 
@@ -325,7 +325,7 @@ lista_preguntas = [
         "respuesta_4": "Plataformas", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿Cuál es el enemigo principal de Sonic?", 
         "respuesta_1": "Bowser", 
@@ -334,7 +334,7 @@ lista_preguntas = [
         "respuesta_4": "Metal Sonic", 
         "respuesta_correcta": 2},
     {
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿Qué empresa creó la saga Halo?", 
         "respuesta_1": "Valve", 
@@ -343,7 +343,7 @@ lista_preguntas = [
         "respuesta_4": "Ubisoft", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿Qué famoso juego tiene piezas llamadas ‘tetriminos’?", 
         "respuesta_1": "Pac-Man", 
@@ -352,7 +352,7 @@ lista_preguntas = [
         "respuesta_4": "Snake", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "facil",
         "pregunta": "¿Cuál es el personaje principal de Minecraft?", 
         "respuesta_1": "Steve", 
@@ -361,8 +361,8 @@ lista_preguntas = [
         "respuesta_4": "Alex", 
         "respuesta_correcta": 1},
     {
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿En qué juego aparece la ciudad de Raccoon City?", 
         "respuesta_1": "Silent Hill", 
         "respuesta_2": "Resident Evil", 
@@ -370,8 +370,8 @@ lista_preguntas = [
         "respuesta_4": "Dead Rising", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿Cuál es el nombre completo de 'Master Chief'?", 
         "respuesta_1": "John-117", 
         "respuesta_2": "Marcus Fenix", 
@@ -379,8 +379,8 @@ lista_preguntas = [
         "respuesta_4": "Shepard-001", 
         "respuesta_correcta": 1},
     {   
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿Qué arma es la más icónica de Cloud en Final Fantasy VII?", 
         "respuesta_1": "Gunblade", 
         "respuesta_2": "Buster Sword", 
@@ -388,8 +388,8 @@ lista_preguntas = [
         "respuesta_4": "Dragon Lance", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿Cuál es el planeta natal de Samus Aran?", 
         "respuesta_1": "Zebes", 
         "respuesta_2": "SR388", 
@@ -397,8 +397,8 @@ lista_preguntas = [
         "respuesta_4": "Talos I", 
         "respuesta_correcta": 3},
     {   
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿Cómo se llama el villano principal de Far Cry 3?", 
         "respuesta_1": "Vaas Montenegro", 
         "respuesta_2": "Pagan Min", 
@@ -406,8 +406,8 @@ lista_preguntas = [
         "respuesta_4": "Micah Bell", 
         "respuesta_correcta": 1},
     {   
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿Qué compañía desarrolló The Witcher 3?", 
         "respuesta_1": "BioWare", 
         "respuesta_2": "CD Projekt Red", 
@@ -415,8 +415,8 @@ lista_preguntas = [
         "respuesta_4": "Obsidian", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿En qué año se lanzó el primer PlayStation?", 
         "respuesta_1": "1992", 
         "respuesta_2": "1994", 
@@ -424,8 +424,8 @@ lista_preguntas = [
         "respuesta_4": "1998", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿Cómo se llama el protagonista de Red Dead Redemption 2?", 
         "respuesta_1": "John Marston", 
         "respuesta_2": "Arthur Morgan", 
@@ -433,8 +433,8 @@ lista_preguntas = [
         "respuesta_4": "Bill Williamson", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿Qué juego popularizó el género Battle Royale?", 
         "respuesta_1": "H1Z1", 
         "respuesta_2": "PUBG", 
@@ -442,8 +442,8 @@ lista_preguntas = [
         "respuesta_4": "Apex Legends", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
-        "dificultad": "medio",
+        "categoria": "JUEGOS",
+        "dificultad": "media",
         "pregunta": "¿Cuál es el nombre del mítico dragón final de Skyrim?", 
         "respuesta_1": "Alduin", 
         "respuesta_2": "Parthurnaax", 
@@ -451,7 +451,7 @@ lista_preguntas = [
         "respuesta_4": "Vahlok", 
         "respuesta_correcta": 1},
     {
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "¿Cómo se llama el creador original de la saga Metal Gear?", 
         "respuesta_1": "Shigeru Miyamoto", 
@@ -460,7 +460,7 @@ lista_preguntas = [
         "respuesta_4": "Tetsuya Nomura", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "En Dark Souls, ¿qué objeto se usa para encender hogueras y subir de nivel?", 
         "respuesta_1": "Humanity", 
@@ -469,7 +469,7 @@ lista_preguntas = [
         "respuesta_4": "Fire Gem", 
         "respuesta_correcta": 1},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "¿Cuál fue el primer juego en usar el término 'Metroidvania'?", 
         "respuesta_1": "Castlevania", 
@@ -478,7 +478,7 @@ lista_preguntas = [
         "respuesta_4": "Symphony of the Night", 
         "respuesta_correcta": 4},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "¿Cómo se llama la inteligencia artificial enemiga en System Shock?", 
         "respuesta_1": "GLADOS", 
@@ -487,7 +487,7 @@ lista_preguntas = [
         "respuesta_4": "Karen", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "¿Qué juego fue desarrollado completamente por una sola persona y se volvió un éxito mundial?", "respuesta_1": "Undertale", 
         "respuesta_2": "Stardew Valley", 
@@ -495,7 +495,7 @@ lista_preguntas = [
         "respuesta_4": "Minecraft", 
         "respuesta_correcta": 4},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "¿Cuál es el nombre del planeta en el que ocurre Mass Effect 1 al comenzar el juego?", "respuesta_1": "Eden Prime",
         "respuesta_2": "Terra Nova", 
@@ -503,7 +503,7 @@ lista_preguntas = [
         "respuesta_4": "Ilos", 
         "respuesta_correcta": 1},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "En Bloodborne, ¿cómo se llama la ciudad principal?", 
         "respuesta_1": "Iosefka", 
@@ -512,7 +512,7 @@ lista_preguntas = [
         "respuesta_4": "Hemwick", 
         "respuesta_correcta": 3},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "¿Qué juego introdujo el personaje 'Ciri'?", 
         "respuesta_1": "The Witcher 1", 
@@ -521,7 +521,7 @@ lista_preguntas = [
         "respuesta_4": "Gwent", 
         "respuesta_correcta": 1},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "¿Cuál fue el primer videojuego de la historia según registros oficiales?", 
         "respuesta_1": "Pong", 
@@ -530,7 +530,7 @@ lista_preguntas = [
         "respuesta_4": "Computer Space", 
         "respuesta_correcta": 2},
     {   
-        "categoria": "juego",
+        "categoria": "JUEGOS",
         "dificultad": "dificil",
         "pregunta": "En la saga Kingdom Hearts, ¿cómo se llama la llave-espada principal?", 
         "respuesta_1": "Oblivion", 
@@ -630,7 +630,7 @@ lista_preguntas = [
         "respuesta_correcta": 2},
     {   
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿Qué tratado puso fin a la Primera Guerra Mundial?", 
         "respuesta_1": "Tratado de Roma", 
         "respuesta_2": "Tratado de París", 
@@ -639,7 +639,7 @@ lista_preguntas = [
         "respuesta_correcta": 3},
     {
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿En qué año cayó el Muro de Berlín?", 
         "respuesta_1": "1989", 
         "respuesta_2": "1991", 
@@ -648,7 +648,7 @@ lista_preguntas = [
         "respuesta_correcta": 1},
     {   
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿Qué civilización utilizó la escritura cuneiforme?", 
         "respuesta_1": "Mesopotamia", 
         "respuesta_2": "Grecia", 
@@ -657,7 +657,7 @@ lista_preguntas = [
         "respuesta_correcta": 1},
     {   
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿Qué país lideró la colonización de América del Sur?", 
         "respuesta_1": "Francia", 
         "respuesta_2": "Portugal", 
@@ -666,7 +666,7 @@ lista_preguntas = [
         "respuesta_correcta": 3},
     {   
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿Cómo se llamaba el líder soviético durante la Segunda Guerra Mundial?", 
         "respuesta_1": "Lenin", 
         "respuesta_2": "Stalin", 
@@ -675,7 +675,7 @@ lista_preguntas = [
         "respuesta_correcta": 2},
     {   
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿Qué guerra enfrentó a Estados Unidos y la URSS indirectamente?", 
         "respuesta_1": "Guerra Civil Española", 
         "respuesta_2": "Guerra Fría", 
@@ -684,7 +684,7 @@ lista_preguntas = [
         "respuesta_correcta": 2},
     {   
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿Cuál fue la principal ruta comercial entre Asia y Europa?", 
         "respuesta_1": "La Ruta de la Seda",  
         "respuesta_2": "La Ruta Imperial", 
@@ -693,7 +693,7 @@ lista_preguntas = [
         "respuesta_correcta": 1},
     {
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿Qué líder militar cruzó los Alpes en elefantes?", 
         "respuesta_1": "Alejandro Magno", 
         "respuesta_2": "César", 
@@ -702,7 +702,7 @@ lista_preguntas = [
         "respuesta_correcta": 3},
     {   
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿Qué evento inició la Revolución Francesa?", 
         "respuesta_1": "La toma de la Bastilla", 
         "respuesta_2": "La ejecución del rey", 
@@ -711,7 +711,7 @@ lista_preguntas = [
         "respuesta_correcta": 1},
     {       
         "categoria": "historia",
-        "dificultad": "medio",
+        "dificultad": "media",
         "pregunta": "¿En qué guerra luchó Napoleón Bonaparte?", 
         "respuesta_1": "Guerras Napoleónicas", 
         "respuesta_2": "Guerra de Crimea", 

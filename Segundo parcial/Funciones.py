@@ -38,10 +38,10 @@ def crear_datos_juego() -> dict:
         "puntuacion": 0,
         "cantidad_vidas": CANTIDAD_VIDAS,
         "indice": 0,
-        "volumen_musica": 5,
+        "volumen_musica": 100,
         "bandera_texto": False,
         "tiempo_inicio": None,
-        "aciertos_consecutivos": 0,
+        "respuestas_correctas": 0,
     }
     return datos_juego
 
@@ -87,6 +87,10 @@ def verificar_respuesta(pregunta_actual: dict, datos_juego: dict, respuesta: int
         retorno = True
         if respuesta == pregunta_actual.get("respuesta_correcta"):
             modificar_puntuacion(datos_juego, 100)
+            datos_juego["respuestas_correctas"] = datos_juego.get("respuestas_correctas", 0) + 1
+            if datos_juego["respuestas_correctas"] >= 5:
+                modificar_vida(datos_juego, 1)
+                datos_juego["tiempo_restante"] += 15
         else:
             modificar_puntuacion(datos_juego, -25)
             modificar_vida(datos_juego, -1)
@@ -136,6 +140,7 @@ def reiniciar_estadisticas(datos_juego: dict) -> bool:
             "cantidad_vidas": CANTIDAD_VIDAS,
             "tiempo_restante": TIEMPO_PARTIDA,
             "tiempo_inicio": None,
+            "respuestas_correctas": 0,
         })
     else:
         retorno = False
@@ -173,20 +178,17 @@ def mostrar_presentacion(pantalla, cola_eventos):
     ventana = "presentacion"
 
     # Fondo estilo preguntados
-    fondo = pygame.image.load("Segundo parcial/Texturas/menu_inicio.png")
+    fondo = pygame.image.load("Texturas/menu_inicio.png")
     fondo = pygame.transform.scale(fondo, PANTALLA)
     pantalla.blit(fondo, (0,0))
 
     # Botón jugar
-    #boton = pygame.Rect(300, 430, 300, 80)
-    boton = pygame.Rect(X_CENTRO_BOTON, Y_POSICION_FIJA, ANCHO_BOTON, ALTO_BOTON)
+    boton = pygame.Rect(300, 430, 300, 80)
     pygame.draw.rect(pantalla, (255,165,0), boton, border_radius=30)
 
     fuente = pygame.font.SysFont("Arial", 45, True)
     texto = fuente.render("JUGAR", True, (255,255,255))
-    texto_centro = texto.get_rect()
-    texto_centro.center = boton.center
-    pantalla.blit(texto, texto_centro)
+    pantalla.blit(texto, (380,440))
 
     for evento in cola_eventos:
         if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:

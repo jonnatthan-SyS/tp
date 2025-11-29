@@ -1,6 +1,8 @@
 from Preguntas import *
 import json
 import os
+import datetime
+from Funciones import *
 
 def generar_json(nombre_archivo: str, lista: list) -> bool:
     if type(lista) == list and len(lista) > 0:
@@ -23,6 +25,49 @@ def leer_json(nombre_archivo: str) -> any:
     
     return retorno
 
+def guardar_partida(nombre: str, puntuacion: int, archivo: str = "puntajes.json"):
+    lista_partidas = leer_json(archivo)
+
+    if lista_partidas == False:
+        lista_partidas = []
+
+    lista_partidas.append({
+        "nombre": nombre,
+        "puntuacion": puntuacion,
+        "fecha": datetime.datetime.now().strftime("%d-%m-%Y")
+    })
+
+    generar_json(archivo, lista_partidas)
+
+def obtener_top_10(archivo: str = "puntajes.json",) -> list:
+    lista_partidas = leer_json(archivo)
+
+    if lista_partidas == False:
+        return []
+    
+    top_10 = []
+    lista_partidas = lista_partidas.copy()
+
+    for i in range(10):
+        if len(lista_partidas) == 0:
+            break
+
+        max_puntuacion = -1 
+        indice_mejor = -1
+        for j in range(len(lista_partidas)):
+            partida_actual = lista_partidas[j]
+            puntuacion_actual = partida_actual.get("puntuacion", 0)
+
+            if puntuacion_actual > max_puntuacion:
+                max_puntuacion = puntuacion_actual
+                indice_mejor = j
+
+        if indice_mejor != -1:
+            mejor_partida = lista_partidas[indice_mejor]
+            top_10.append(mejor_partida)
+            del lista_partidas[indice_mejor]
+    return top_10
+
 def guardar_csv(nombre_archivo: str, lista_diccionarios: list, separador: str = ";") -> bool:
     if type(lista_diccionarios) != list or len(lista_diccionarios) == 0:
         return False
@@ -41,7 +86,6 @@ def guardar_csv(nombre_archivo: str, lista_diccionarios: list, separador: str = 
             indice += 1
 
     return True
-
 
 def leer_csv_preguntas(nombre_archivo:str, separador: str = ";") -> list | None:
     lista_preguntas = []
@@ -78,7 +122,6 @@ def leer_csv_preguntas(nombre_archivo:str, separador: str = ";") -> list | None:
 
     return lista_preguntas
 
-
 def crear_cabecera(diccionario: dict, separador: str = ",") -> str:
     if type(diccionario) == dict:
         lista_claves = list(diccionario.keys())
@@ -98,7 +141,6 @@ def crear_dato_csv(diccionario :dict, separador: str = ",") -> str:
 def reemplazar_caracteres(cadena:str,caracter_viejo:str,caracter_nuevo:str) -> str:
     cadena_nueva = ""
     
-    #Validar lo crean importante
     for i in range(len(cadena)):
         if cadena[i] == caracter_viejo:
             cadena_nueva += caracter_nuevo
@@ -134,5 +176,4 @@ def unir_cadena(lista:list,separador:str) -> str:
         
     return cadena_nueva
 
-# Recuerden chicos cuando tengan que hacer los comodines pongan toda la info que necesiten los mismos en los datos_juego, ya que no tenemos objetos es la única forma de comunicar la info en tiempo real en el juego
-
+# Recuerden chicos cuando tengan que hacer los comodines pongan toda la info que necesiten los mismos en los datos_juego, ya que no tenemos objetos es la única forma de comunicar la info en tiempo real en el juego.
